@@ -91,24 +91,4 @@ It's best to thoroughly test your configurations first! :)
 - Some yaml fields support extended types that the publisher resolves on load and converts into appropriate CRM/PowerShell objects. These extended types let you describe complex references, files, or special data types cleanly in the yaml configurations. Resolution is implemented in [`DynamicsTools`](lib/DynamicsTools.psm1).
 
 
-Examples — common scenarios
-- Lookup by field (user by name):
-
-```yaml
-{
-  "ownerid": { "$refByField": { "entity": "systemuser", "Field": "name", "Operator": "eq", "Value": "Max Mustermann" } }
-}
-```
-
-- Security role reference for team assignment:
-
-```yaml
-{
-    "logicalName": "teamroles_association",
-    "func": "Associate",
-    "recordRef1": { "$refByField": { "entity": "team", "field": "name", "operator": "eq", "value": "Reading Marketing Team" } },
-    "recordRef2": { "$refBySecRole": { "SecRoleName": "Accounts Read Only", "BusinessUnitName": "Marketing" } }
-}
-```
-
 See [data/configurations](data/configurations) for examples of the expected yaml structure.
