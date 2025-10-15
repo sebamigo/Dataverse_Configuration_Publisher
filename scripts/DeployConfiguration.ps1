@@ -3,11 +3,7 @@ param(
 )
 
 
-$libs = Get-ChildItem -Path ".\lib" -Include "*.psm1", "*.ps1", "*.psd1" -Recurse -File
-foreach ($lib in $libs)
-{
-    Import-Module $lib.FullName -Force
-}
+".\lib" | Get-ChildItem -Include "*.psm1", "*.ps1", "*.psd1" -Recurse -File | Import-Module
 
 Import-Module Microsoft.Xrm.Tooling.CrmConnector.PowerShell.psd1 -Force
 Import-Module Microsoft.Xrm.Data.PowerShell.psd1 -Force
@@ -18,8 +14,6 @@ Out-Banner -Path ".\data\Banner.txt"
 Write-Log -ModuleName $MyInvocation.MyCommand.Name -Message "Connecting to Dynamics 365..."
 
 $connection = Get-CrmConnection -InteractiveMode
-
-
 
 Write-Log -ModuleName $MyInvocation.MyCommand.Name -Message "Starting config publisher..."
 
