@@ -1,0 +1,37 @@
+records:
+  - meta:
+      logicalName: team
+      guid: c71716e4-f5b4-4ac0-b96f-a7d57d34754b
+    fields:
+      name:
+        $string: Reading Marketing Team
+      businessunitid:
+        $refByField:
+          entity: businessunit
+          field: name
+          value: Marketing
+relations:
+  - logicalName: teamroles_association
+    func: Associate
+    recordRef1:
+      $refByField:
+        entity: team
+        field: name
+        operator: eq
+        value: Reading Marketing Team
+    recordRef2:
+      $refBySecRole:
+        SecRoleName: Accounts Read Only
+        BusinessUnitName: Marketing
+  - logicalName: teamroles_association
+    func: Associate
+    recordRef1:
+      $refByField:
+        entity: team
+        field: name
+        operator: eq
+        value: Reading Marketing Team
+    recordRef2:
+      $refBySecRole:
+        SecRoleName: Projects Read Only
+        BusinessUnitName: Marketing

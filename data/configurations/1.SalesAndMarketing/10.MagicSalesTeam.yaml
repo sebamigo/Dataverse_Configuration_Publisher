@@ -1,0 +1,37 @@
+records:
+  - meta:
+      logicalName: team
+      guid: 0c6d8aa1-2269-4cea-84dd-3d998c6dad56
+    fields:
+      name:
+        $string: Magic Sales Team
+      businessunitid:
+        $refByField:
+          entity: businessunit
+          field: name
+          value: Sales
+relations:
+  - logicalName: teamroles_association
+    func: Associate
+    recordRef1:
+      $refByField:
+        entity: team
+        field: name
+        operator: eq
+        value: Magic Sales Team
+    recordRef2:
+      $refBySecRole:
+        SecRoleName: Accounts Read & Write
+        BusinessUnitName: Sales
+  - logicalName: teamroles_association
+    func: Associate
+    recordRef1:
+      $refByField:
+        entity: team
+        field: name
+        operator: eq
+        value: Magic Sales Team
+    recordRef2:
+      $refBySecRole:
+        SecRoleName: Projects Read & Write
+        BusinessUnitName: Sales

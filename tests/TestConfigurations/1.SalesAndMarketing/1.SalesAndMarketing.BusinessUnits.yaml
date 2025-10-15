@@ -1,0 +1,35 @@
+records:
+  - meta:
+      logicalName: businessunit
+      guid: 8dfa76c8-f18f-469e-8719-4f0a66f7f0b0
+    fields:
+      name:
+        $string: Sales & Marketing
+      description:
+        $string: Business Unit for Sales & Marketing
+  - meta:
+      logicalName: businessunit
+      guid: b15deb7a-0111-4f0f-b557-ab5a3d57535d
+    fields:
+      name:
+        $string: Sales
+      description:
+        $string: Business Unit for Sales
+      parentbusinessunitid:
+        $refByField:
+          entity: businessunit
+          field: name
+          value: Sales & Marketing
+  - meta:
+      logicalName: businessunit
+      guid: 032b2907-8475-426b-bf63-17e651b17018
+    fields:
+      name:
+        $string: Marketing
+      description:
+        $string: Business Unit for Marketing
+      parentbusinessunitid:
+        $refByField:
+          entity: businessunit
+          field: name
+          value: Sales & Marketing
