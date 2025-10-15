@@ -1,14 +1,3 @@
-function Get-TextField {
-    param (
-        $string
-    )
-    return [string] $string
-}
-function Reset-ConsistentCrmConnection {
-    $global:crmConnection = $null
-}
-
-
 function Get-Reference {
     param (
         [string]$EntityLogicalName,

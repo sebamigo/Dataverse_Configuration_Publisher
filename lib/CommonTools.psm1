@@ -38,16 +38,3 @@ function Out-Banner {
         Write-Log -ModuleName "Banner" -Message "Banner file not found at path: $Path"
     }
 }
-
-function Get-RawProperty {
-    param (
-        [object]$Object
-    )
-
-    foreach ($key in $Object.Keys) {
-        [PSCustomObject]@{
-            Key = $key
-            Value = $Object[$key]
-        }
-    }
-}
