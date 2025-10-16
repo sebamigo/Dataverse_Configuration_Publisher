@@ -57,8 +57,8 @@ Install the following tools/modules:
   Install-Module -Name Pester
   ```
 
-- **Pester (for tests)**  
-  Install the Pester PowerShell module:  
+- **YAML Support**  
+  Install the yaml PowerShell module:  
   ```powershell
   Install-Module -Name powershell-yaml
   ```
