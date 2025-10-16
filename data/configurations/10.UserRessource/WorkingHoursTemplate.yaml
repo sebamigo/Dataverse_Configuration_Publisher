@@ -20,7 +20,7 @@ records:
       documentbody:
         $file:
           filePath: attachments/WorkingHoursTemplate_V1.txt
-        encoding: base64
+          encoding: base64
       objecttypecode:
         $string: dyn_user_ressource
       objectid:
