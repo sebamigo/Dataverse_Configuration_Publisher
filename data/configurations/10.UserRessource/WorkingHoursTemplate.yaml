@@ -1,0 +1,30 @@
+records:
+  - meta:
+      logicalName: dyn_user_ressource
+      guid: cdbf2011-220a-493b-9d64-0f29e0153610
+    fields:
+      dyn_configkey:
+        $string: WorkingHoursTemplate
+      dyn_description:
+        $string: Template for working hours
+  - meta:
+      logicalName: annotation
+      guid: ca2e16ff-25ed-48cc-8c58-c2c15fd8d65c
+    fields:
+      subject:
+        $string: WorkingHoursTemplate
+      filename:
+        $string: WorkingHoursTemplate_V1.txt
+      mimetype:
+        $string: text/plain
+      documentbody:
+        $file:
+          filePath: attachments/WorkingHoursTemplate_V1.txt
+        encoding: base64
+      objecttypecode:
+        $string: dyn_user_ressource
+      objectid:
+        $refByField:
+          entity: dyn_user_ressource
+          field: dyn_configkey
+          value: WorkingHoursTemplate

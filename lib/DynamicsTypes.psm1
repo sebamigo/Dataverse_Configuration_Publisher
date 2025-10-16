@@ -45,14 +45,14 @@ function Get-SecRoleRef {
 
 function Get-File {
     param (
-        [string]$Path,
+        [string]$FilePath,
         [string]$Encoding = "utf8"
     )
-    return Get-Content -Path $Path -Encoding byte
+    $content = Get-Content -Path $FilePath -AsByteStream
 
     switch ($Encoding) {
         "utf8" { return [System.Text.Encoding]::UTF8.GetBytes($content) }
-        "base64" { return [System.Convert]::FromBase64String($content) }
+        "base64" { return [System.Convert]::ToBase64String($content) }
         default { throw "Unsupported encoding: $Encoding" }
     }
 }

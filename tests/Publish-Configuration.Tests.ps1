@@ -40,7 +40,7 @@ Describe 'Publish-Configuration' {
             Publish-Configuration -Files $allFiles -CrmConnection $global:MockCrmConnection
 
             
-            $global:CrmStore.Records.Count | Should -Be 9
+            $global:CrmStore.Records.Count | Should -Be 11
             $global:CrmStore.Relations.Count | Should -Be 4
             
             # Verify that the expected security roles were related to the expected teams. Little hard to read, but works for now :D

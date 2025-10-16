@@ -42,7 +42,7 @@ Configurations are stored as yaml files, processed by the script, and applied to
 - Core scripts:
   - Deployment entry point: [DeployConfiguration](scripts/DeployConfiguration.ps1)
   - Publisher logic: [Publish-Configuration](scripts/ConfigPublisher.psm1)
-  - Helper functions: [CommonTools](lib/CommonTools.psm1) (`Write-Log`, `Out-Banner`) and [DynamicsTools](lib/DynamicsTools.psm1) (utilities for Microsoft Dynamics 365 CRM)
+  - Helper functions: [CommonTools](lib/CommonTools.psm1) (`Write-Log`, `Out-Banner`) and [DynamicsTypes](lib/DynamicsTypes.psm1) (utilities for Microsoft Dynamics 365 CRM)
 
 Key functions/modules
 - [`Publish-Configuration`](scripts/ConfigPublisher.psm1) — processes yaml files, creates/updates records via `Set-CrmRecord`, and manages relationships (Associate/Disassociate).
@@ -100,7 +100,7 @@ It's best to thoroughly test your configurations first! :)
 ## More
 **Extended data types in yaml**
 
-- Some yaml fields support extended types that the publisher resolves on load and converts into appropriate CRM/PowerShell objects. These extended types let you describe complex references, files, or special data types cleanly in the yaml configurations. Resolution is implemented in [`DynamicsTools`](lib/DynamicsTools.psm1).
+- Some yaml fields support extended types that the publisher resolves on load and converts into appropriate CRM/PowerShell objects. These extended types let you describe complex references, files, or special data types cleanly in the yaml configurations. Resolution is implemented in [`DynamicsTypes`](lib/DynamicsTypes.psm1).
 
 
 See [data/configurations](data/configurations) for examples of the expected yaml structure.

@@ -7,7 +7,7 @@ $script:TypeConverters = @{
     '$ref'         = { param($propertyValue, $CrmConnection) Get-Reference -EntityLogicalName $propertyValue.LogicalName -Id $propertyValue.Id }
     '$refByField'  = { param($propertyValue, $CrmConnection) Get-ReferenceByField -EntityLogicalName $propertyValue.entity -Field $propertyValue.Field -Operator $propertyValue.Operator -Value $propertyValue.Value -Connection $CrmConnection }
     '$refBySecRole'= { param($propertyValue, $CrmConnection) Get-SecRoleRef -SecRoleName $propertyValue.SecRoleName -BusinessUnitName $propertyValue.BusinessUnitName -Connection $CrmConnection }
-    '$file'        = { param($propertyValue, $CrmConnection) Get-File -Path $propertyValue.Path -Encoding $propertyValue.Encoding }
+    '$file'        = { param($propertyValue, $CrmConnection) Get-File -FilePath $propertyValue.filePath -Encoding $propertyValue.Encoding }
 }
 
 function Publish-Configuration {
